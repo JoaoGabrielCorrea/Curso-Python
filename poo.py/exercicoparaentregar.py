@@ -38,32 +38,48 @@ class Banco(ABC):
         pass
 
 class Conta_Bancaria(Banco):
-    def criar_conta (self,nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
+    def __init__ (self,nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
         self.cliente=nome_cliente
         self.agencia=numero_agencia
         self.conta=tipo_de_conta
         self.saldo=saldo_conta
         pass
+
+    def numero_banco (self):
+        return (1991)
+        pass
+
+    def conta_banco (self):
+        pass
+
+    def nome_banco (self):
+        return ("Se Banco fosse bom se chamaria Sofá")
+        pass
     
+    def mostrar_tipo_conta (self):
+        return self.conta
+        pass
 
     def depositar_conta(self,deposito):
         self.saldo+=deposito
         pass
 
-    def mostrar_saldo(self):
+    def mostrar_saldo_conta(self):
+        return self.saldo
         pass
 
-    def sacar_conta(self,deposito):
-        self.saldo-=deposito
+    def sacar_conta(self,saque):
+        self.saldo-=saque
     pass
 
 class Conta_Poupanca(Conta_Bancaria):
-    def __init__(self) -> None:
-        super().__init__()
-        
-class Conta_Corrente(Conta_Bancaria):
-    def __init__(self) -> None:
-        super().__init__()
+    def __init__(self, nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
+        super().__init__(nome_cliente, numero_agencia, tipo_de_conta, saldo_conta)
+
+class Conta_Corrente (Conta_Bancaria): 
+    def __init__(self, nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
+        super().__init__(nome_cliente, numero_agencia, tipo_de_conta, saldo_conta)
+
 
 
 
