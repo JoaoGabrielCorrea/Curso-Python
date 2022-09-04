@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 # '''
 # Exercicio com abstração, herança, encapsulamento
-# Criar um sistema bancario(extremamente simple) que tem clientes, contas e um banco.
-# A ideia é que o cliente tenha uma conta(poupança ou corrente) e que possa sacar/depositar nessa conta.
-# Contas corrente tem um limite extra. Banco tem clientes e contas.
+## Criar um sistema bancario(extremamente simple) que tem clientes, contas e um banco.
+## A ideia é que o cliente tenha uma conta(poupança ou corrente) e que possa sacar/depositar nessa conta.
+## Contas corrente tem um limite extra. Banco tem clientes e contas.
 
 # Dicas:
 # Criar classe Cliente que herda da classe Pessoa(Herança)
@@ -37,28 +37,44 @@ class Banco(ABC):
     def nome_banco (self):
         pass
 
-class Conta_Bancaria(Banco):
-    def __init__ (self,nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
-        self.cliente=nome_cliente
-        self.agencia=numero_agencia
-        self.conta=tipo_de_conta
-        self.saldo=saldo_conta
+
+class Pessoa:
+    def __init__(self,nome,idade,sexo,raca) -> None:
+        self.nome=nome
+        self.idade=idade
+        self.sexo=sexo
+        self.raca=raca
         pass
+
+class Cliente(Pessoa):
+    def __init__(self,nome,idade) -> None:
+        self.nome_cliente=nome
+        self.idade=idade
+        pass
+class Conta_Bancaria(Banco,Cliente):
+    def __init__ (self,nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
+        self.nome=nome_cliente
+        self.agencia=numero_agencia
+        self.conta_bacaria=tipo_de_conta
+        self.saldo=saldo_conta
+        
+    def mostrar_nome_cliente (self):
+        return self.nome
 
     def numero_banco (self):
-        return (1991)
+        numero_banco=(1991)
+        return (f"Número Banco: {numero_banco}")
         pass
-
     def conta_banco (self):
         pass
-
     def nome_banco (self):
-        return ("Se Banco fosse bom se chamaria Sofá")
+        nome_banco = ("Se Banco fosse bom se chamaria Sofá")
+        return (f"Banco: {nome_banco}")
         pass
     
     def mostrar_tipo_conta (self):
-        return self.conta
-        pass
+        return self.conta_bacaria
+        
 
     def depositar_conta(self,deposito):
         self.saldo+=deposito
@@ -75,24 +91,22 @@ class Conta_Bancaria(Banco):
 class Conta_Poupanca(Conta_Bancaria):
     def __init__(self, nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
         super().__init__(nome_cliente, numero_agencia, tipo_de_conta, saldo_conta)
-
-class Conta_Corrente (Conta_Bancaria): 
+        
+class Conta_Corrente (Conta_Poupanca):
     def __init__(self, nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
         super().__init__(nome_cliente, numero_agencia, tipo_de_conta, saldo_conta)
+        self.saldo_conta=saldo_conta
+
+    def limite_extra(self):
+        return self.saldo*0.3
+        pass
 
 
+add_cliente_corrente=Conta_Corrente ("João","001","Conta Corrente",1000) # inserir cliente
 
+print (add_cliente_corrente.numero_banco()) #mostrar cliente corrente
+print (add_cliente_corrente.nome_banco()) #mostrar cliente corrente
+print (add_cliente_corrente.mostrar_nome_cliente()) #mostrar cliente corrente
+print (add_cliente_corrente.mostrar_tipo_conta()) #mostrar cliente corrente
+print (add_cliente_corrente.limite_extra()) #mostrar cliente corrente
 
-
-
-#class Poupanca(Conta_Bancaria):
-
-# add_cliente= Poupanca ("João","001",50) # inserir clinete
-# print (add_cliente.cliente) #mostrar cliente
-# print (add_cliente.conta) # mostrar conta
-# print (add_cliente.saldo) #mostrar saldo
-# add_cliente.depositar(112) #usa variavel cliente,usando função depositar com valor dentro de parenteses
-# add_cliente.sacar(12) #usa variavel cliente,usando função sacar com valor dentro de parenteses
-# print (add_cliente.saldo)
-# add_cliente.rendimento_do_dia()
-# print (add_cliente.saldo)
