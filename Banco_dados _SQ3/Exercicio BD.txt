@@ -1,0 +1,4 @@
+Crie um algoritmo onde um banco possa criar uma tabela de clientes e adiciona-los
+Cliente deve ter ID, Nome, Saldo, Numero de Conta e Agencia.
+O algoritmo deve ser capaz de adicionar uma pessoa diferente a cada execução.
+E deve imprimir uma lista com todos os clientes, mostrando nome, numero de conta  e saldo.
