@@ -24,3 +24,6 @@ conexao.commit()
 comand.execute('SELECT * FROM clientes')
 for linha in comand.fetchall():
     print(linha)
+
+comand.close() #NAO ESQUEÇA DE FECHAR O CURSOR E A CONEXAO NO FINAL DO CODIGO
+conexao.close()
