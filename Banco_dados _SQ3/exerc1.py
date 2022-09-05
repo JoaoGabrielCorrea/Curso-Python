@@ -12,7 +12,14 @@ comand.execute('CREATE TABLE IF NOT EXISTS clientes('
 'NUMERO_CONTA INTEGER,'
 'AGENCIA INTEGER'')')
 
-comand.execute('INSERT INTO clientes(IDI,NOME,SALDO,NUMERO_CONTA,AGENCIA) VALUES("01","JOAO",100,001,12)')
+id= (input("Insira ID: "))
+nome= (input("Insira nome: "))
+saldo= (input("Insira saldo: "))
+numero_conta= (input("Insira numero da conta: "))
+agencia= (input("Insira agencia: "))
+
+
+comand.execute(f'INSERT INTO clientes(IDI,NOME,SALDO,NUMERO_CONTA,AGENCIA) VALUES("{id}","{nome}",{saldo},{numero_conta},{agencia})')
 conexao.commit()
 comand.execute('SELECT * FROM clientes')
 for linha in comand.fetchall():
