@@ -47,10 +47,8 @@ class Pessoa:
         pass
 
 class Cliente(Pessoa):
-    def __init__(self,nome,idade) -> None:
-        self.nome_cliente=nome
-        self.idade=idade
-        pass
+    def __init__(self, nome, idade, sexo, raca) -> None:
+        super().__init__(nome, idade, sexo=None, raca= None)
 class Conta_Bancaria(Banco,Cliente):
     def __init__ (self,nome_cliente, numero_agencia, tipo_de_conta, saldo_conta):
         self.nome=nome_cliente
