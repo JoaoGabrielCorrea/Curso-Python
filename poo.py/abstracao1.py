@@ -7,24 +7,23 @@ class Geometrica(ABC): #class mãe abstrata
     @abstractmethod
     def area(self):
         pass
-        
 
 class Quadrado(Geometrica):
-   
+
     def perimetro(self,lado):
         self.perimetro = (lado*4)
         return self.perimetro
-  
+
     def area(self,lado):
         self.area=(lado**2)
         return self.area
 
 class Pentagono(Geometrica):
-   
+
     def perimetro(self,lado):
         self.perimetro = (lado*5)
         return self.perimetro
-  
+
     def area(self,lado,apotema):
         self.area=(lado*5*apotema/2)
         return self.area
