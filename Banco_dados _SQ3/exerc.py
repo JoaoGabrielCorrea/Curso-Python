@@ -17,13 +17,7 @@
 # Crie o banco de dados e a tabela no DB BROWSER e o CRUD façam pelo vscode. 
 # Façam uma classe Cardápio onde tenha funções que façam cada um dos itens do CRUD.
 
-# Crie um banco de dados com a tabela pessoas #feito#
-# A tabela pessoas deve conter as colunas, nome, idade, peso, sexo e classe social #feito#
-# Depois faca o codigo mostrar apenas as pessoas com peso acima de 60 ##
-# Depois mostre apenas quem é do sexo feminino ##
-# Depois mostre quem é de classe social Alta ##
-# Depois mostre apenas quem tem peso acima de 60, idade que 18, sexo feminino e classe social alta ##
-# Altere o peso e classe social de pelo menos 3 pessoas com idade acima de 60 anos. ##
+
 
 import sqlite3
 
