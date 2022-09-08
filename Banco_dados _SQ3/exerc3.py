@@ -27,19 +27,19 @@ if escolha=="1":
     for linha in comand.fetchall():
         print(linha)
 
-elif escolha==2:
-    produto= (input("Insira nome produto: "))
-    preco= (input("Insira preço do produto: "))
-    comand.execute(f'UPDATE Produtos SET Produto = "Bolonhesa" WHERE Produto = "Bosta"')
+elif escolha=="2":
+    nome_atual= (input("Insira nome produto do produto a ser substituido: "))
+    novo_nome= (input("Insira novo nome do produto: "))
+    comand.execute(f'UPDATE Produtos SET Produto = "{novo_nome}" WHERE Produto = "{nome_atual}"')
     conexao.commit()
     comand.execute('SELECT * FROM Produtos')
     for linha in comand.fetchall():
         print(linha)
 
-elif escolha==3:
-    produto= (input("Insira nome produto: "))
+elif escolha=="3":
+    deletar= (input("Insira nome produto que quer deletar: "))
     preco= (input("Insira preço do produto: "))
-    comand.execute(f'DELETE FROM Produtos WHERE Produto = "Bosta"')
+    comand.execute(f'DELETE FROM Produtos WHERE Produto = "{deletar}"')
     conexao.commit()
     comand.execute('SELECT * FROM Produtos')
     for linha in comand.fetchall():
