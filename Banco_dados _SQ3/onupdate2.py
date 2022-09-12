@@ -20,6 +20,21 @@ class Conta:
         for linha in comand.fetchall():
             print(linha)
 
+
+    def ler_conta(self,pesquisa):
+        self.pesquisa=pesquisa
+        conexao=sqlite3.connect("NETFlix.db")
+        conexao.execute("PRAGMA foreign_keys = 1")
+        comand=conexao.cursor()
+        comand.execute (f'SELECT EMAIL FROM CONTA WHERE EMAIL = "{pesquisa}"')
+        for linha in comand.fetchall():
+            print(linha)
+
+        pass
+
+    def atualizar_conta(self):
+        pass
+
     def deletar_conta(self,deletar):
         self.deletar=deletar
         conexao=sqlite3.connect("NETFlix.db")
@@ -54,8 +69,8 @@ class Perfil(Conta):
 
 
 
-
-cadastro1=Perfil("joao","joao@gmail.com")
+#cadastro1=Perfil("jo","joao@gmail.com")
 
 cadastro=Conta()
-cadastro.criar_conta("joao@gmail.com","2525")
+#cadastro.criar_conta("jo@gmail.com","2525")
+cadastro.ler_conta("jo@gmail.com")
