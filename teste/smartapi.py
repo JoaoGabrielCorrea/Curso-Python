@@ -12,8 +12,8 @@ def linha():
     return('-'*40)
 
 
-# response_rewards=requests.get('http://explorer.smarts.cash:8080/v1/smartrewards/history').json()
-# print (response_rewards)
+response_rewards=requests.get('http://explorer.smarts.cash:8080/v1/smartrewards/history').json()
+print (response_rewards)
 
 response_supply=requests.get('http://explorer.smarts.cash:8080/v1/blockchain/supply').json()
 print (response_supply['CurrentSupply'])
