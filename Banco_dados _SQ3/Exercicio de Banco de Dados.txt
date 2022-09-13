@@ -1,0 +1,10 @@
+Crie um banco de Dados com a Tabela Agenda
+contendo as seguintes colunas:
+ID - PK, AI
+nome, text - NN
+telefone, INTEGER - NN, UNIQUE
+endereço, text
+CPF, REAL - UNIQUE (use o codigo de validador de cpf para validar este cpf)
+
+Faça uma CLASSE chamada Agenda que insira pessoas, altere quem ja foi inserido, delete quem ja foi inserido e Liste a lista teelfonica.
+
